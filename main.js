@@ -1,8 +1,13 @@
-const getHowManyTimes = function(number, divisor) {
-    return Math.floor(number / divisor);
-}
+const inputNumber = document.querySelector('.number-input');
+const inputBase = document.querySelector('.base-input');
+const divWarning = document.querySelector('#warning-box');
+const divResult = document.querySelector('.final-result-box');
 
-const generateGreatestExponent = function(number, base) {
+let number = 0;
+let base = 0;
+let convertedNumber = [];
+
+const generateGreatestExponent = function (number, base) {
     if (number === 0) return 0;
 
     let exponent = 0;
@@ -14,7 +19,11 @@ const generateGreatestExponent = function(number, base) {
     return (exponent - 1);
 }
 
-const convertNumber = function(number, bigeastExp, base) {
+const getHowManyTimes = function (number, divisor) {
+    return Math.floor(number / divisor);
+}
+
+const convertNumber = function (number, bigeastExp, base) {
     const convertedNum = [];
 
     while (bigeastExp > -1) {
@@ -23,7 +32,7 @@ const convertNumber = function(number, bigeastExp, base) {
         const operation = number - (numBase * times);
         console.log('Value: ', numBase, ' Times: ', times, ' Sobra: ', operation);
 
-        if (operation >= 0){
+        if (operation >= 0) {
             number -= numBase * times;
             convertedNum.push(times);
         } else {
@@ -35,11 +44,52 @@ const convertNumber = function(number, bigeastExp, base) {
 
     return convertedNum;
 }
-const num = 123;
-const base = 4;
-const expo = generateGreatestExponent(num, base);
-console.log(convertNumber(num, expo, base));
 
-//console.log(generateGreatestExponent(10, 3));
-//console.log(convertNumber(12, 2, 3));
-//console.log(getHowManyTimes(6, 5.9));
+const removeWarning = function () {
+    const warningContainer = document.querySelector('.btn-warning');
+    warningContainer.style.display = 'none';
+}
+
+const clearInputs = function () {
+    inputBase.value = '';
+    inputNumber.value = '';
+    number = 0;
+    base = 0;
+    convertedNumber = [];
+    divResult.innerHTML = '';
+}
+
+const process = function () {
+    number = Number.parseInt(inputNumber.value);
+    base = Number.parseInt(inputBase.value);
+
+    if (number <= 0 || base <= 0) {
+        const html = `
+            <article class="message is-danger btn-warning">
+                <div class="message-header">
+                    <p>Atenção</p>
+                    <button onclick="removeWarning()" class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">Apenas números <strong>naturais</strong> são aceitos.</div>
+            </article>
+        `;
+
+        divWarning.insertAdjacentHTML('afterbegin', html);
+        clearInputs();
+    } else {
+        const exponent = generateGreatestExponent(number, base);
+        convertedNumber = convertNumber(number, exponent, base);
+
+        const html = `
+            <span class="final-result">${number}
+            <span class="base-number">(10)</span>
+            &nbsp;=&nbsp;
+            </span>
+            <span class="final-result">${convertedNumber}
+            <span class="base-number">(${base})</span>
+            </span>
+        `;
+
+        divResult.insertAdjacentHTML('afterbegin', html);
+    }
+}

@@ -7,7 +7,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
 </head>
 <body>
 
@@ -110,33 +109,37 @@
                         <p class="title">Conversor</p>
                         <p class="subtitle">Informe um número em base decimal, e a base desejada.</p>
 
+                        <div id="warning-box"></div>
+
                         <div class="field">
                             <label class="subtitle input-label">Número</label>
                             <div class="control">
-                                <input class="input" type="number" placeholder="Digite o número">
+                                <input class="input number-input" type="number" placeholder="Digite o número">
                             </div>
                         </div>
 
                         <div class="field">
                             <label class="subtitle input-label">Base</label>
                             <div class="control">
-                                <input class="input" type="number" placeholder="Digite a base">
+                                <input class="input base-input" type="number" placeholder="Digite a base"/>
                             </div>
                         </div>
 
                         <div class="field is-grouped">
                             <div class="control">
-                                <button class="button is-link">Submit</button>
+                                <button onclick="process()" class="button is-link">Processar</button>
                             </div>
                             <div class="control">
-                                <button class="button is-link is-light">Cancel</button>
+                                <button onclick="clearInputs()" class="button is-link is-light">Limpar</button>
                             </div>
                         </div>
                     </article>
 
                     <article class="tile is-child notification is-warning">
-                        <p class="title">...tiles</p>
-                        <p class="subtitle">Bottom tile</p>
+                        <p class="title">Resultado:</p>
+
+                        <div class="final-result-box"></div>
+
                     </article>
                 </div>
             </div>
@@ -149,24 +152,13 @@
                         <div class="card">
                             <div class="card-content">
                                 <p class="title">
-                                    “Site desenvolvido após discussão na aula 29/09/2022 de sistemas digitais - Universidade São Judas.”
+                                    “Site desenvolvido após discussão da aula de sistemas digitais -
+                                    Universidade São Judas - 29/09/2022”
                                 </p>
                                 <p class="subtitle">
                                     Professor: Fernando Pizzo
                                 </p>
                             </div>
-                            <footer class="card-footer">
-                                <p class="card-footer-item">
-                            <span>
-                              View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-                            </span>
-                                </p>
-                                <p class="card-footer-item">
-                            <span>
-                              Share on <a href="#">Facebook</a>
-                            </span>
-                                </p>
-                            </footer>
                         </div>
                     </div>
                     <figure class="image is-4by3">
@@ -181,11 +173,13 @@
 <footer class="footer">
     <div class="content has-text-centered">
         <p>
-            <strong>Math Base Converter</strong> by <a target="_blank" href="https://www.instagram.com/leonardo.freiitas/">Léo Freitas</a>. The source code is licensed
+            <strong>Math Base Converter</strong> by <a target="_blank"
+                                                       href="https://www.instagram.com/leonardo.freiitas/">Léo
+            Freitas</a>. The source code is licensed
             <a target="_blank" href="http://opensource.org/licenses/mit-license.php">MIT</a>.
         </p>
     </div>
 </footer>
-
+<script src='main.js'></script>
 </body>
 </html>
