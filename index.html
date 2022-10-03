@@ -3,17 +3,26 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Base Calculator</title>
+    <title>Base Converter</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon-package/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-package/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-package/favicon-16x16.png">
+    <link rel="manifest" href="imgs/favicon-package/site.webmanifest">
+    <link rel="mask-icon" href="imgs/favicon-package/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#dddbbc">
+
 </head>
 <body>
 
 <nav class="navbar is-transparent">
     <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox"
+            <img src="imgs/BASE.png" alt="Bulma: a modern CSS framework based on Flexbox"
                  width="112" height="28">
         </a>
         <div class="navbar-burger" data-target="navbarExampleTransparentExample">
@@ -25,38 +34,9 @@
 
     <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="https://bulma.io/">
+            <a id="home-btn" class="navbar-item">
                 Home
             </a>
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
-                    Docs
-                </a>
-                <div class="navbar-dropdown is-boxed">
-                    <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">
-                        Overview
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/overview/modifiers/">
-                        Modifiers
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                        Columns
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                        Layout
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                        Form
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                        Elements
-                    </a>
-                    <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-                        Components
-                    </a>
-                </div>
-            </div>
         </div>
 
         <div class="navbar-end">
@@ -64,23 +44,25 @@
                 <div class="field is-grouped">
                     <p class="control">
                         <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet"
-                           data-social-target="https://bulma.io" target="_blank"
-                           href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+                           data-social-target="https://bulma.io" 
+                           target="_blank"
+                           href="https://www.instagram.com/leonardo.freiitas/">
                     <span class="icon">
-                      <i class="fab fa-twitter"></i>
+                      <img alt="instagram logo" src="imgs/instagram-logo.svg"/>
                     </span>
-                            <span>
-                      Tweet
+                    <span>
+                      Instagram
                     </span>
                         </a>
                     </p>
                     <p class="control">
                         <a class="button is-primary"
-                           href="https://github.com/jgthms/bulma/releases/download/0.9.4/bulma-0.9.4.zip">
+                        target="_blank"
+                           href="https://github.com/Leo3965/math-base-converter">
                     <span class="icon">
-                      <i class="fas fa-download"></i>
+                      <img alt="github logo" src="imgs/github-logo.svg" class="git-logo"/>
                     </span>
-                            <span>Download</span>
+                            <span>Source</span>
                         </a>
                     </p>
                 </div>
@@ -89,14 +71,9 @@
     </div>
 </nav>
 
-<section class="hero is-medium">
+<section class="hero hero-section is-medium">
     <div class="hero-body">
-        <p class="title">
-            12 = 1 1 0 0
-        </p>
-        <p class="subtitle">
-            Made by: Léo Freitas
-        </p>
+        
     </div>
 </section>
 
@@ -149,20 +126,34 @@
             <article class="tile is-child notification">
                 <div class="content">
                     <div class="content">
+
                         <div class="card">
                             <div class="card-content">
                                 <p class="title">
-                                    “Site desenvolvido após discussão da aula de sistemas digitais -
-                                    Universidade São Judas - 29/09/2022”
+                                    “Site desenvolvido após discussão da aula de sistemas digitais”
                                 </p>
                                 <p class="subtitle">
-                                    Professor: Fernando Pizzo
+                                    Professor: Fernando Pizzo - <a target="_blank" href="https://www.youtube.com/channel/UCeddKB1HezhgvcKsAZFK-BA">Youtube</a>
                                 </p>
                             </div>
+
+                            <footer class="card-footer">
+                                <p class="card-footer-item">
+                                  <span>
+                                    29/09/2022
+                                  </span>
+                                </p>
+                                <p class="card-footer-item">
+                                  <span>
+                                    Universidade São Judas
+                                  </span>
+                                </p>
+                              </footer>
                         </div>
+
                     </div>
                     <figure class="image is-4by3">
-                        <img alt="foto com quadro e contas matemáticas" src="imgs/quadro_usjt.JPEG">
+                        <img alt="Eu e meus amigos da faculdade" src="imgs/galera-usjt.jpeg">
                     </figure>
                 </div>
             </article>
@@ -170,12 +161,12 @@
     </div>
 </section>
 
-<footer class="footer">
+<footer id="footer" class="footer">
     <div class="content has-text-centered">
         <p>
-            <strong>Math Base Converter</strong> by <a target="_blank"
-                                                       href="https://www.instagram.com/leonardo.freiitas/">Léo
-            Freitas</a>. The source code is licensed
+            <strong>Math Base Converter</strong> by 
+            <a>Léo Freitas</a>. 
+            The source code is licensed
             <a target="_blank" href="http://opensource.org/licenses/mit-license.php">MIT</a>.
         </p>
     </div>

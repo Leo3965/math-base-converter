@@ -2,6 +2,8 @@ const inputNumber = document.querySelector('.number-input');
 const inputBase = document.querySelector('.base-input');
 const divWarning = document.querySelector('#warning-box');
 const divResult = document.querySelector('.final-result-box');
+const footer = document.querySelector('#footer'); 
+const btnHome = document.getElementById('home-btn');
 
 let number = 0;
 let base = 0;
@@ -50,13 +52,13 @@ const removeWarning = function () {
     warningContainer.style.display = 'none';
 }
 
-const clearInputs = function () {
+const clearInputs = function (clearResult = true) {
     inputBase.value = '';
     inputNumber.value = '';
     number = 0;
     base = 0;
     convertedNumber = [];
-    divResult.innerHTML = '';
+    if (clearResult) divResult.innerHTML = '';
 }
 
 const process = function () {
@@ -85,11 +87,16 @@ const process = function () {
             <span class="base-number">(10)</span>
             &nbsp;=&nbsp;
             </span>
-            <span class="final-result">${convertedNumber}
+            <span class="final-result">${convertedNumber.reduce((acc, cur) => acc + cur + ' ', '')}
             <span class="base-number">(${base})</span>
             </span>
         `;
 
         divResult.insertAdjacentHTML('afterbegin', html);
+        clearInputs(false);
     }
 }
+
+btnHome.addEventListener('click', () => {
+    footer.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'nearest'});
+});

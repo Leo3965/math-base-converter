@@ -35,7 +35,9 @@ const convertNumber = function (number, bigeastExp, base) {
 
     return convertedNum;
 }
-const num = 123;
-const base = 4;
+const num = 12;
+const base = 2;
 const expo = generateGreatestExponent(num, base);
-console.log(convertNumber(num, expo, base));
+const contertedNum = convertNumber(num, expo, base);
+console.log(contertedNum);
+console.log(contertedNum.reduce((acc, cur, idx, src) => acc + cur + ' ', ''));
