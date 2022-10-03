@@ -61,7 +61,13 @@ const clearInputs = function (clearResult = true) {
     if (clearResult) divResult.innerHTML = '';
 }
 
+const clearResult = () => {
+    divResult.innerHTML = '';
+    convertedNumber = [];
+}
+
 const process = function () {
+    clearResult();
     number = Number.parseInt(inputNumber.value);
     base = Number.parseInt(inputBase.value);
 
@@ -79,19 +85,20 @@ const process = function () {
         divWarning.insertAdjacentHTML('afterbegin', html);
         clearInputs();
     } else {
+
         const exponent = generateGreatestExponent(number, base);
         convertedNumber = convertNumber(number, exponent, base);
-
+        
         const html = `
-            <span class="final-result">${number}
-            <span class="base-number">(10)</span>
+        <span class="final-result">${number}
+        <span class="base-number">(10)</span>
             &nbsp;=&nbsp;
             </span>
             <span class="final-result">${convertedNumber.reduce((acc, cur) => acc + cur + ' ', '')}
             <span class="base-number">(${base})</span>
             </span>
-        `;
-
+            `;
+            
         divResult.insertAdjacentHTML('afterbegin', html);
         clearInputs(false);
     }

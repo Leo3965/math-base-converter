@@ -35,8 +35,8 @@ const convertNumber = function (number, bigeastExp, base) {
 
     return convertedNum;
 }
-const num = 12;
-const base = 2;
+const num = 133;
+const base = 3;
 const expo = generateGreatestExponent(num, base);
 const contertedNum = convertNumber(num, expo, base);
 console.log(contertedNum);
